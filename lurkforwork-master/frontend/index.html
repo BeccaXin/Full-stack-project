@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>LurkForWork</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="styles/global.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <style>
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
+
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+        }
+    }
+
+    .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+    }
+
+    .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+    }
+
+    .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+    .Error-toast{
+        background-color: rgb(198, 73, 73);
+        border-radius: 5px;
+        position: fixed;
+        align-items: flex-end;
+        width: auto;
+        margin-right: 10px;
+        top: 10%;
+        left: 80%;
+        max-width: 100%;
+        text-align: center;
+    }
+    .Error-toast-text{
+        color: #fff;
+        padding: 5px 10px;
+    }
+
+    .Right-toast{
+        background-color: rgb(7, 93, 207);
+        border-radius: 5px;
+        position: fixed;
+        align-items: flex-end;
+        width: auto;
+        top: 90%;
+        left: 80%;
+        margin-right: 10px;
+        max-width: 100%;
+        text-align: center;
+    }
+    .Right-toast-text{
+        color: #fff;
+        padding: 5px 10px;
+    }
+    </style>
+</head>
+
+<body class="text-center">
+    <span id="internetstatus" style="display: none;"></span>
+    <div id="loading">
+        <?xml version="1.0" encoding="utf-8"?>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: rgb(255, 255, 255); display: block; shape-rendering: auto; animation-play-state: running; animation-delay: 0s;" width="100px" height="100px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+    <g transform="rotate(0 50 50)" style="animation-play-state: running; animation-delay: 0s;">
+    <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d" style="animation-play-state: running; animation-delay: 0s;">
+        <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1.5873015873015872s" begin="-1.455026455026455s" repeatCount="indefinite" style="animation-play-state: running; animation-delay: 0s;"></animate>
+    </rect>
+    </g><g transform="rotate(30 50 50)" style="animation-play-state: running; animation-delay: 0s;">
+    <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d" style="animation-play-state: running; animation-delay: 0s;">
+        <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1.5873015873015872s" begin="-1.3227513227513226s" repeatCount="indefinite" style="animation-play-state: running; animation-delay: 0s;"></animate>
+    </rect>
+    </g><g transform="rotate(60 50 50)" style="animation-play-state: running; animation-delay: 0s;">
+    <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d" style="animation-play-state: running; animation-delay: 0s;">
+        <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1.5873015873015872s" begin="-1.1904761904761905s" repeatCount="indefinite" style="animation-play-state: running; animation-delay: 0s;"></animate>
+    </rect>
+    </g><g transform="rotate(90 50 50)" style="animation-play-state: running; animation-delay: 0s;">
+    <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d" style="animation-play-state: running; animation-delay: 0s;">
+        <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1.5873015873015872s" begin="-1.0582010582010581s" repeatCount="indefinite" style="animation-play-state: running; animation-delay: 0s;"></animate>
+    </rect>
+    </g><g transform="rotate(120 50 50)" style="animation-play-state: running; animation-delay: 0s;">
+    <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d" style="animation-play-state: running; animation-delay: 0s;">
+        <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1.5873015873015872s" begin="-0.9259259259259258s" repeatCount="indefinite" style="animation-play-state: running; animation-delay: 0s;"></animate>
+    </rect>
+    </g><g transform="rotate(150 50 50)" style="animation-play-state: running; animation-delay: 0s;">
+    <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d" style="animation-play-state: running; animation-delay: 0s;">
+        <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1.5873015873015872s" begin="-0.7936507936507936s" repeatCount="indefinite" style="animation-play-state: running; animation-delay: 0s;"></animate>
+    </rect>
+    </g><g transform="rotate(180 50 50)" style="animation-play-state: running; animation-delay: 0s;">
+    <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d" style="animation-play-state: running; animation-delay: 0s;">
+        <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1.5873015873015872s" begin="-0.6613756613756613s" repeatCount="indefinite" style="animation-play-state: running; animation-delay: 0s;"></animate>
+    </rect>
+    </g><g transform="rotate(210 50 50)" style="animation-play-state: running; animation-delay: 0s;">
+    <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d" style="animation-play-state: running; animation-delay: 0s;">
+        <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1.5873015873015872s" begin="-0.5291005291005291s" repeatCount="indefinite" style="animation-play-state: running; animation-delay: 0s;"></animate>
+    </rect>
+    </g><g transform="rotate(240 50 50)" style="animation-play-state: running; animation-delay: 0s;">
+    <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d" style="animation-play-state: running; animation-delay: 0s;">
+        <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1.5873015873015872s" begin="-0.3968253968253968s" repeatCount="indefinite" style="animation-play-state: running; animation-delay: 0s;"></animate>
+    </rect>
+    </g><g transform="rotate(270 50 50)" style="animation-play-state: running; animation-delay: 0s;">
+    <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d" style="animation-play-state: running; animation-delay: 0s;">
+        <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1.5873015873015872s" begin="-0.26455026455026454s" repeatCount="indefinite" style="animation-play-state: running; animation-delay: 0s;"></animate>
+    </rect>
+    </g><g transform="rotate(300 50 50)" style="animation-play-state: running; animation-delay: 0s;">
+    <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d" style="animation-play-state: running; animation-delay: 0s;">
+        <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1.5873015873015872s" begin="-0.13227513227513227s" repeatCount="indefinite" style="animation-play-state: running; animation-delay: 0s;"></animate>
+    </rect>
+    </g><g transform="rotate(330 50 50)" style="animation-play-state: running; animation-delay: 0s;">
+    <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#fe718d" style="animation-play-state: running; animation-delay: 0s;">
+        <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1.5873015873015872s" begin="0s" repeatCount="indefinite" style="animation-play-state: running; animation-delay: 0s;"></animate>
+    </rect>
+    </g>
+    </svg>
+    </div>
+<!-- //home page -->
+
+    <main class="home-page w-100 m-auto" id="section_homepage">
+    <div class="header" style="margin-top: 100px;">
+        <img class="mb-4" src="styles/lucky.png" width="170" height="100">
+        <h4> Welcome to lurkforwork.com</h4>
+        <nav>
+            <label style="font-size: 3px;">You have account</label><br>
+            <i style='font-size:12px' class='fas'>&#xf107;</i><br>
+            <a type='button' href='#loginin' id='loginin' class="loginin nav-item btn form-control" style="background-color: wheat;border-color:bisque;color: rgb(122, 185, 122);width: auto;"><i class='fas fa-tree'> </i> Log In </a><br>
+            <label style="margin-top: 5px;font-size: 3px;">You don't have account</label><br>
+            <i style='font-size:12px' class='fas'>&#xf107;</i><br>
+            <a type='button' href='#signin' id='signin' class="signin nav-item btn form-control" style="background-color: wheat;border-color:bisque;color: rgb(122, 185, 122);;width: auto;"><i class='fas fa-tree'> </i> Sign In </i></a><br>
+        </nav>
+        <p class="mt-5 mb-3 text-muted">&copy; lurkforwork.com 2022–2023</p>
+    </div>
+    </main>
+
+<!-- //login_in page -->
+    <main href='#loginin' class="form-login w-100 m-auto" id='section_login' style="display: none;">
+        <form>
+        <img class="mb-4" src="styles/lucky.png" alt="" width="170" height="100">
+        <h1 class="h3 mb-3 fw-normal">Please log in</h1>
+    
+        <div class="form-floating">
+            <input type="email" class="form-control" id="gfloatingInput" placeholder="Password">
+            <label for="gfloatingInput">Email</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="gfloatingPassword" placeholder="Password">
+            <label for="gfloatingPassword">Password</label>
+        </div>
+    
+        <div class="checkbox mb-3">
+            <label style="padding-right: 20px;">
+            <input type="checkbox" value="remember-me"> Remember me
+            </label>
+            <a id='logintosignin' style="color:brown">Register</a>
+        </div>
+        <a type='button' id='loginbutton' href='#feedpage' class="w-100 btn btn-lg btn-primary" style="background-color: wheat;border-color:bisque;color: rgb(122, 185, 122);" type="submit" onclick='return InputChecklogin()'>Log In</a>
+        <!-- <button class="w-100 btn btn-lg" onclick="history.go(-1);">Return</button> -->
+        <p class="mt-5 mb-3 text-muted">&copy; lurkforwork.com 2022–2023</p>
+        </form>
+    </main>
+
+<!-- //sign_in page -->
+    <main href='#loginin' class="form-signin w-100 m-auto" id='section_signin' style="display: none;">
+        <form>
+            <img class="mb-4" src="styles/lucky.png" alt="" width="170" height="100" style="margin-bottom: -20px;">
+            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+        
+            <div class="form-floating">
+                <input type="email" class="form-control" id="sfloatingInput" placeholder="name@example.com"/>
+                <label for="sfloatingInput">Email</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="sfloatingPassword" placeholder="Password"/>
+                <label for="sfloatingPassword">Password</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="sfloatingPasswordcheck" placeholder="Input password again"/>
+                <label for="sfloatingPasswordcheck">Check Password</label>
+            </div>
+            <div class="form-floating">
+                <input type="name" class="form-control" id="sfloatingInputName" placeholder="Name"/>
+                <label for="sfloatingInputName">Name</label>
+            </div>
+
+
+            <div class="checkbox mb-3">
+                <label style="padding-right: 20px;">
+                <input type="checkbox" value="remember-me"> Remember me
+                </label>
+                <a id='signintologin' style="color:brown">log in</a>
+            </div>
+            <a type='button' id='signinbutton' href='#feedpage' class="w-100 btn btn-lg btn-primary" style="background-color: wheat;border-color:bisque;color: rgb(122, 185, 122);" type="submit" onclick='return InputChecksignin()'>Sign In</a>
+            <!-- <button class="w-100 btn btn-lg" onclick="history.go(-1);" style="justify-content: left;">Return</button> -->
+            <p class="mt-5 mb-3 text-muted">&copy; lurkforwork.com 2022–2023</p>
+        </form>
+    </main>
+
+<!-- feed page -->
+
+<main class="feedpage" id='section_feedpage' href='#feedpage' style="display: none;">
+    <div class="container" style="background-color: #fff;">
+        <header class="blog-header lh-1 py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+            <div class="col-4 text-center">
+            <a class="blog-header-logo text-dark" onclick="history.go(0)">LurkForWork.com</a>
+            </div>
+            <div class="col-4 d-flex justify-content-end align-items-center">
+            <a class="link-secondary" aria-label="Search">
+                <button type="button" id="searchwatchuser" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#usersearch" style="margin-left: 5px; background-color: bisque;" alt="search user to follow">🔍 Search</button>
+                    <div class="modal fade" id="usersearch" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5">🔍 Search User</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="searchuseremail" class="col-form-label">Email</label>
+                                        <input type="text" class="form-control" id="searchuseremail" placeholder="Input user's email"></input>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn" id='watchsearchuser' onclick="searchusertofocusbutton()" style="background-color: pink;" >💗 Watch this user</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+            </a>
+            <div class="dropdown">
+                <a class="btn btn-sm btn-outline-secondary dropdown-toggle" id="userinfomationshow" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="margin-left: 5px; background-color: bisque;"></a>
+                <ul class="dropdown-menu">
+                    <li><a type="button" class="dropdown-item" style="font-size:5px;" id="ownerprofileshow" data-bs-toggle="modal" data-bs-target="#ownerprofile">Owner Profile</a></li>
+                    <li><a class="dropdown-item" id="logout" style="font-size:5px;">Log Out</a></li>
+                    </ul>
+                    <div class="modal fade" id="ownerprofile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5">Your Profile</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                <div class="mb-3">
+                                    <label for="puserimg" class="col-form-label">Image</label><br>
+                                    <img src='styles/nophoto.png' id="puserimg" style="width:100px;height:100px;"></img>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="pusername" class="col-form-label">Name</label>
+                                    <text type="text" class="form-control" id="pusername"></text>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="puseremail" class="col-form-label">Email</label>
+                                    <text type="text" class="form-control" id="puseremail"></text>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="puserpassword" class="col-form-label">Password</label>
+                                    <text type="text" class="form-control" id='puserpassword'>
+                                </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" id='watchmyselfbutton' onclick="watchmyselfnew()">Watch myself</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                            </div>
+                        </div>
+            </div>
+            </div>
+        </div>
+        </header>
+
+        <nav class="nav d-flex justify-content-lg-start">
+            <!-- <button type="button" id="alljobfeedshow" class="btn btn-sm btn-outline-secondary" style="margin-left: 10px;">ALL JOB PAGE</button> -->
+            <button type="button" id="create-newjob" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#jobModal" style="margin-left: 7px;">📖 Create New Job</button>
+                <div class="modal fade" id="jobModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5">📖 Create New Job</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                        <div class="mb-3">
+                            <label for="createjobimage" class="col-form-label">Image</label>
+                            <input type="file" class="form-control" id='createjobimage'>
+                            <img src='styles/imgsubmit.png' id='picToCheckjob' style="width:100px;height:100px;"/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="createjobdate" class="col-form-label">Start</label>
+                            <input  type='datetime-local' class="form-control" id="createjobdate" format="yyyy-mm-dd hh:mm:ss"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="createjobtitle" class="col-form-label">Title</label>
+                            <input type="text" class="form-control" id='createjobtitle' placeholder="please input job's title">
+                        </div>
+                        <div class="mb-3">
+                            <label for="createjobdescription" class="col-form-label"></label>
+                            <textarea class="form-control" id="createjobdescription" placeholder="please input job's description"></textarea>
+                        </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" onclick="uploadnewjob()" class="btn btn-primary" id='upload_newjob'>Upload New Job</button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <button type="button" id="userprofile" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#userprofilemodal" style="margin-left: 10px;">👼 Update Owner Profile</button>
+                    <div class="modal fade" id="userprofilemodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="user_title">👼 Update User profile</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                <div class="mb-3">
+                                    <label for="userimage" class="col-form-label">Image</label>
+                                    <input type="file" class="form-control" id='userimage'>
+                                    <img src='styles/imgsubmit.png' id='picToCheckuser' style="width:100px;height:100px;"/>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="username" class="col-form-label">Name</label>
+                                    <input type="text" class="form-control" id="username"></input>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="useremail" class="col-form-label">Email</label>
+                                    <input type="text" class="form-control" id="useremail"></input>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="userpassword" class="col-form-label">Password</label>
+                                    <input type="text" class="form-control" id='userpassword'>
+                                </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" onclick="updateuserinfo()" class="btn btn-primary" id='userinfo'>Submit Info</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" id="updatejobmodal" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#jobupdatemodal" style="display: none;" ></button>
+                    <div class="modal fade" id="jobupdatemodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="modal_title">Update New Job</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                <div class="mb-3">
+                                    <label for="updatejobimage" class="col-form-label">Image</label>
+                                    <input type="file" class="form-control" id='updatejobimage'>
+                                    <img src='styles/imgsubmit.png' id='picToCheckjobupdate' style="width:100px;height:100px;"/>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="updatejobdate" class="col-form-label">Start</label>
+                                    <input  type='datetime-local' class="form-control" id="updatejobdate" format="yyyy-mm-dd hh:mm:ss"></input>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="updatejobtitle" class="col-form-label">Title</label>
+                                    <input type="text" class="form-control" id='updatejobtitle' placeholder="please input update job's title">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="updatejobdescription" class="col-form-label"></label>
+                                    <textarea class="form-control" id="updatejobdescription" placeholder="please update job's description"></textarea>
+                                </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" onclick="updatenewjob()" class="btn btn-primary" id='submitupdatebutton'>Upload New Job</button>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                        <button type="button" id="creatorusermodal" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#creatoruserinfo" href='#creatoruserinfo' style="display: none;" ></button>
+                        <div class="modal fade" id="creatoruserinfo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5">Job Creator Profile</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                    <div class="mb-3">
+                                        <label for="creatoruserimg" class="col-form-label">Image</label><br>
+                                        <img src='styles/nophoto.png' id="creatoruserimg" style="width:100px;height:100px;"></img>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="creatorusername" class="col-form-label">Name</label>
+                                        <text type="text" class="form-control" id="creatorusername"></text>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="creatoruseremail" class="col-form-label">Email</label>
+                                        <text type="text" class="form-control" id="creatoruseremail"></text>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="creatoruserwatchjob" class="col-form-label">Focus Jobs</label>
+                                        <text type="text" class="form-control" id='creatoruserwatchjob'>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="creatoruserwatchuser" class="col-form-label">Focus Number Of Users</label>
+                                        <text type="text" class="form-control" id='creatoruserwatchuser'>
+                                    </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer"> 
+                                    <button type="button" onclick="watchthisusersbutton()" class="btn btn-primary" id='wactchuserbutton'>Watch User 👀</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
+                                </div>
+                            </div>
+                    </nav>
+
+<!-- feedjob list show -->
+<div id="feed-item">
+</div>
+
+<footer class="text-muted py-5">
+    <p class="mt-5 mb-3 text-muted">&copy; lurkforwork.com 2022–2023</p>
+    </div>
+</footer>
+</main> 
+    <script>
+
+// right toast build
+
+(function(window , undefined ){ 
+    var Righttoast = function(){ 
+    };
+    Righttoast.prototype={  
+        create: function(str,duration) {
+            let self = this;
+            var toastHtml = '';
+            var toastText = '<div class="Right-toast-text">'+str+'</div>';
+
+            toastHtml = '<div class="Right-toast">'+toastText+'</div>';
+            if(document.querySelector(".Right-toast"))return;    
+            document.body.insertAdjacentHTML('beforeend', toastHtml);
+            duration == null ? duration=2000 : '';  //Default 2s
+            self.show();
+            setTimeout(function(){
+                self.hide();
+            }, duration);
+        },
+        show:function(){
+            let self = this;
+            document.querySelector(".Right-toast").style.display = "block";
+            document.querySelector(".Right-toast").style.marginTop =  "-"+Math.round(document.querySelector(".Right-toast").offsetHeight/2)+"px";
+            if(document.querySelector(".Right-toast"))return;
+        },
+        hide:function(){
+            var self = this;
+            if(document.querySelector(".Right-toast")){
+                document.querySelector(".Right-toast").parentNode.removeChild(document.querySelector(".Right-toast"));
+            }
+        },
+        toast:function(str,duration){
+            var self = this;
+            return self.create(str,duration);
+        }
+    };
+    window.Righttoast = Righttoast;
+}(window));
+
+var Right = new Righttoast();
+
+//Error toast build
+
+(function(window , undefined ){ 
+    var Errortoast = function(){ 
+    };
+    Errortoast.prototype={ 
+        create: function(str,duration) {
+            let self = this;
+            var toastHtml = '';
+            var toastText = '<div class="Error-toast-text">'+str+'</div>';
+
+            toastHtml = '<div class="Error-toast">'+toastText+'</div>';
+            if(document.querySelector(".Error-toast"))return;  
+            document.body.insertAdjacentHTML('beforeend', toastHtml);
+            duration == null ? duration=2000 : '';  //Default 2s
+            self.show();
+            setTimeout(function(){
+                self.hide();
+            }, duration);
+        },
+        show:function(){
+            let self = this;
+            document.querySelector(".Error-toast").style.display = "block";
+            document.querySelector(".Error-toast").style.marginTop =  "-"+Math.round(document.querySelector(".Error-toast").offsetHeight/2)+"px";
+            if(document.querySelector(".Error-toast"))return;
+        },
+        hide:function(){
+            var self = this;
+            if(document.querySelector(".Error-toast")){
+                document.querySelector(".Error-toast").parentNode.removeChild(document.querySelector(".Error-toast"));
+            }
+        },
+        toast:function(str,duration){
+            var self = this;
+            return self.create(str,duration);
+        }
+    };
+    window.Errortoast = Errortoast;
+}(window));
+
+	var Error = new Errortoast();
+    
+// loading
+    function disloading(){
+        document.getElementById('loading').style.display='none';
+    }
+
+
+// set the page change 
+    const loginpage =document.querySelector('#section_login')
+    const registerpage=document.querySelector('#section_signin')
+    const feedsection=document.querySelector('#section_feedpage')
+    const homepage=document.querySelector('#section_homepage')
+
+
+// Verify login
+    function getusertoken (){
+        return localStorage.getItem('system-token')
+    }
+
+    const  isloginin=!!getusertoken();
+
+
+    document.getElementById('loginin').addEventListener('click',()=>{
+        showLogininPage();
+    })
+
+    document.getElementById('signin').addEventListener('click',()=>{
+        showregisterPage();
+    })
+
+    document.getElementById('logintosignin').addEventListener('click',()=>{
+        showregisterPage();
+    })
+
+    document.getElementById('signintologin').addEventListener('click',()=>{
+        showLogininPage();
+    })
+
+    function showhomePage(){
+        loginpage.style.display='none';
+        registerpage.style.display='none';
+        feedsection.style.display='none';
+        homepage.style.display='block';
+    }
+
+    function showLogininPage(){
+        loginpage.style.display='block';
+        registerpage.style.display='none';
+        feedsection.style.display='none';
+        homepage.style.display='none';
+    }
+
+    function showregisterPage(){
+        loginpage.style.display='none';
+        registerpage.style.display='block';
+        feedsection.style.display='none';
+        homepage.style.display='none';
+    }
+
+    function showjobfeedPage(){
+        loginpage.style.display='none';
+        registerpage.style.display='none';
+        feedsection.style.display='block';
+        homepage.style.display='none';
+    }
+    // page change
+    function getPageChange(){
+        const hash = location.hash;
+        switch(hash){      
+            case 'loginin': {
+                window.location.href="?#loginin"
+                showLogininPage();
+                break
+            }
+            case 'signin': {
+                window.location.href="?#signin"
+                showregisterPage();
+                break
+            }
+            case 'feedpage':{
+                window.location.href="?#feedpage"
+                showjobfeedPage();
+                break;
+            }
+            default:{
+                isloginin ? showjobfeedPage() : showhomePage();
+                break;
+            }
+        }
+    }
+
+// user modal
+    const usermodal =new bootstrap.Modal('#userprofilemodal')
+    function updateuserinfo(){
+        const  uim=document.getElementById("userimage").value
+        const  unm=document.getElementById("username").value
+        const  uem=document.getElementById("useremail").value
+        const  upw=document.getElementById("userpassword").value
+        if(uim=='' || unm ==''  || uem =='' || upw ==''){
+            return false
+        }else{
+        usermodal.hide()
+    }
+}
+
+//  watch myself
+const watchmyselfpage= new bootstrap.Modal('#ownerprofile')
+    function watchmyselfnew(){
+        watchmyselfpage.hide()
+        }
+        
+// search watch user
+const searchusertofocus= new bootstrap.Modal('#usersearch')
+    function searchusertofocusbutton(){
+        searchusertofocus.hide()
+        }
+        
+//like and watch
+
+const jobupdatemodalshow= new bootstrap.Modal('#jobupdatemodal')
+        function updatenewjob(){
+            jobupdatemodalshow.hide()
+        }
+// creator modal
+
+const creatormodalwatchhide= new bootstrap.Modal('#creatoruserinfo')
+    function watchthisusersbutton(){
+        creatormodalwatchhide.hide()
+        }
+
+// new job Modal
+    const jobcreatemodal= new bootstrap.Modal('#jobModal')
+    
+    function uploadnewjob(){
+        const  tit=document.getElementById("createjobtitle").value
+        const  img=document.getElementById("createjobimage").value
+        const  sta=document.getElementById("createjobdate").value
+        const  des=document.getElementById("createjobdescription").value
+        if(tit=='' || img==''  || sta =='' || des==''){
+            return false
+        }else{
+        jobcreatemodal.hide()}
+    }
+
+
+// check login&signin info
+    function InputChecklogin(){
+        const eml = document.getElementById("gfloatingInput");
+        if(eml.value==""){
+            Error.toast("🙅‍♂️ Please input vaild email");
+            return false;
+        }
+        const pwd = document.getElementById("gfloatingPassword");
+        if(pwd.value==""){
+            Error.toast("🙅‍♂️ Please input vaild password")
+            return false;
+        }
+    }
+
+    function InputChecksignin(){
+        const eml = document.getElementById("sfloatingInput");
+        const pwd = document.getElementById("sfloatingPassword");
+        const nam = document.getElementById("sfloatingInputName");
+        const pwdcheck=document.getElementById("sfloatingPasswordcheck");
+        if(eml.value==""){
+            Error.toast("🙅‍♂️ Please input vaild email",1500);
+            return false;
+        }
+        if(pwd.value==""){
+            Error.toast("🙅‍♂️ Please input vaild password",1500);
+            return false;
+        }
+        if(nam.value==""){
+            Error.toast("🙅‍♂️ Please input vaild name",1500);
+            return false;
+        }
+        if(pwdcheck.value==""){
+            Error.toast("🙅‍♂️ Please confirm password",1500);
+            return false;
+        }
+    }
+    window.onbeforeunload=function(remind){     
+        var remind = window.event||remind;  
+        Error.toast("Are you leaving the site?",4000)
+        remind.returnValue=("Are you leaving the site?");
+        } 
+
+//network test
+    setInterval(function() {
+    const inetworktestimg = document.createElement('img');
+    inetworktestimg.src = `https://www.humanesociety.org/sites/default/files/styles/1441x612/public/2019/03/rabbit-475261_0.jpg?h=c855054e&itok=nUp2e27x${Date.now()}`;
+    inetworktestimg.style.display='none'
+    document.body.appendChild(inetworktestimg);
+    inetworktestimg.onerror = function() {
+    Error.toast('📶Sorry, Network is not connected')
+    }
+    inetworktestimg.onload = function() {
+    }
+},  1000);
+
+    </script>
+    
+    <script src="src/main.js" type="module"></script>
+</body>
+</html>
+
