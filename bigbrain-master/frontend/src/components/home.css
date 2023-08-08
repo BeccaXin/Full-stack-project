@@ -1,0 +1,22 @@
+.home-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./background.jpg');
+    background-size: cover;
+}
+
+.home-title {
+font-family: "Pacifico";
+color: white;
+text-align: center;
+}
+
+.home-content {
+margin-top: 50px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
